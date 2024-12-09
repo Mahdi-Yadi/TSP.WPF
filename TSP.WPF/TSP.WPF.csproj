@@ -6,6 +6,23 @@
     <Nullable>enable</Nullable>
     <ImplicitUsings>enable</ImplicitUsings>
     <UseWPF>true</UseWPF>
+    <ApplicationIcon>Files\bot.ico</ApplicationIcon>
   </PropertyGroup>
+
+  <ItemGroup>
+    <None Remove="Files\bot.ico" />
+    <None Remove="Files\close.ico" />
+    <None Remove="Files\minimaiz.ico" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Include="Files\bot.ico" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Resource Include="Files\bot.ico" />
+    <Resource Include="Files\close.ico" />
+    <Resource Include="Files\minimaiz.ico" />
+  </ItemGroup>
 
 </Project>

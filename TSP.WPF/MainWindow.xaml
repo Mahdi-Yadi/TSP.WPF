@@ -5,8 +5,39 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:TSP.WPF"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
-    <Grid>
+        Title="MainWindow" Height="650" Width="1000"
+        WindowStartupLocation="CenterScreen"
+        WindowState="Normal"
+        WindowStyle="None"
+        AllowsTransparency="True"
+        Background="Transparent">
 
-    </Grid>
+    <Border MouseDown="appdrag_OnMouseDown" CornerRadius="20" 
+            BorderBrush="DarkBlue" BorderThickness="2">
+
+        <Border.Background>
+            <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                <GradientStop Color="Black" Offset="0"/>
+                <GradientStop Color="MidnightBlue" Offset="0.703"/>
+            </LinearGradientBrush>
+        </Border.Background>
+
+        <Grid>
+
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="741*"/>
+                <ColumnDefinition Width="256*"/>
+            </Grid.ColumnDefinitions>
+
+            <Image Source="/Files/close.ico" HorizontalAlignment="Left"
+                   Height="42" Margin="194,10,0,0" VerticalAlignment="Top" Width="46"
+                   MouseDown="close_OnMouseDown" Cursor="Hand" Grid.Column="1"/>
+            <Image Source="/Files/minimaiz.ico" HorizontalAlignment="Left"
+                   Height="42" Margin="140,10,0,0" VerticalAlignment="Top" Width="46"
+                   MouseDown="mini_OnMouseDown" Cursor="Hand" Grid.Column="1"/>
+
+        </Grid>
+
+    </Border>
+
 </Window>
