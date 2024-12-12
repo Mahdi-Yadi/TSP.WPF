@@ -36,6 +36,60 @@
                    Height="42" Margin="140,10,0,0" VerticalAlignment="Top" Width="46"
                    MouseDown="mini_OnMouseDown" Cursor="Hand" Grid.Column="1"/>
 
+            <Grid>
+
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="387*"/>
+                    <ColumnDefinition Width="353*"/>
+                </Grid.ColumnDefinitions>
+
+                <StackPanel Orientation="Vertical" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="10,10,0,0">
+
+                    <TextBlock Text="شهر ها را با , وارد نمایید . مثال : x,y" Margin="0,0,0,5" Background="Azure" />
+
+                    <ListBox x:Name="CityName" Height="200" Width="200" Margin="0,0,0,10">
+
+                        <ListBox.Background>
+                            <LinearGradientBrush StartPoint="0.5,0" EndPoint="0.5,1">
+                                <GradientStop Color="Aqua" />
+                                <GradientStop Color="Crimson" Offset="1" />
+                            </LinearGradientBrush>
+                        </ListBox.Background>
+
+                        <StackPanel Orientation="Horizontal" FlowDirection="LeftToRight">
+
+                            <TextBox x:Name="cityInput" Width="100" Margin="0,0,5,0" KeyDown="CityInput_OnKeyDown">
+
+                                <TextBox.Background>
+                                    <LinearGradientBrush StartPoint="0.5,0" EndPoint="0.5,1">
+                                        <GradientStop Color="GreenYellow" />
+                                        <GradientStop Color="MediumSeaGreen" Offset="1" />
+                                    </LinearGradientBrush>
+                                </TextBox.Background>
+
+                            </TextBox>
+
+                            <Button Content="افزودن شهر" Click="AddCity_Click" Cursor="Hand" Width="80">
+
+                                <Button.Background>
+
+                                    <LinearGradientBrush StartPoint="0.5,0" EndPoint="0.5,1">
+                                        <GradientStop Color="CornflowerBlue" />
+                                        <GradientStop Color="Violet" Offset="1" />
+                                    </LinearGradientBrush>
+
+                                </Button.Background>
+
+                            </Button>
+
+                        </StackPanel>
+
+                    </ListBox>
+
+                </StackPanel>
+
+            </Grid>
+
         </Grid>
 
     </Border>

@@ -26,4 +26,9 @@ public partial class MainWindow : Window
     {
         WindowState = WindowState.Minimized;
     }
+
+    private void CityInput_OnKeyDown(object sender, KeyEventArgs e)
+    {
+        throw new NotImplementedException();
+    }
 }
