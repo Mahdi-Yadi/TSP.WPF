@@ -56,37 +56,93 @@
                             </LinearGradientBrush>
                         </ListBox.Background>
 
-                        <StackPanel Orientation="Horizontal" FlowDirection="LeftToRight">
-
-                            <TextBox x:Name="cityInput" Width="100" Margin="0,0,5,0" KeyDown="CityInput_OnKeyDown">
-
-                                <TextBox.Background>
-                                    <LinearGradientBrush StartPoint="0.5,0" EndPoint="0.5,1">
-                                        <GradientStop Color="GreenYellow" />
-                                        <GradientStop Color="MediumSeaGreen" Offset="1" />
-                                    </LinearGradientBrush>
-                                </TextBox.Background>
-
-                            </TextBox>
-
-                            <Button Content="افزودن شهر" Click="AddCity_Click" Cursor="Hand" Width="80">
-
-                                <Button.Background>
-
-                                    <LinearGradientBrush StartPoint="0.5,0" EndPoint="0.5,1">
-                                        <GradientStop Color="CornflowerBlue" />
-                                        <GradientStop Color="Violet" Offset="1" />
-                                    </LinearGradientBrush>
-
-                                </Button.Background>
-
-                            </Button>
-
-                        </StackPanel>
-
                     </ListBox>
 
+                    <StackPanel Orientation="Horizontal" FlowDirection="LeftToRight">
+
+                        <TextBox x:Name="cityInput" Width="100" Margin="0,0,5,0" KeyDown="CityInput_OnKeyDown">
+
+                            <TextBox.Background>
+                                <LinearGradientBrush StartPoint="0.5,0" EndPoint="0.5,1">
+                                    <GradientStop Color="GreenYellow" />
+                                    <GradientStop Color="MediumSeaGreen" Offset="1" />
+                                </LinearGradientBrush>
+                            </TextBox.Background>
+
+                        </TextBox>
+
+                        <Button Content="افزودن شهر" Click="AddCity_Click" Cursor="Hand" Width="80">
+
+                            <Button.Background>
+
+                                <LinearGradientBrush StartPoint="0.5,0" EndPoint="0.5,1">
+                                    <GradientStop Color="CornflowerBlue" />
+                                    <GradientStop Color="Violet" Offset="1" />
+                                </LinearGradientBrush>
+
+                            </Button.Background>
+
+                        </Button>
+
+                    </StackPanel>
+
                 </StackPanel>
+
+                <Button Content="الگوریتم حریصانه" Width="100" Height="40" HorizontalAlignment="Left" VerticalAlignment="Top"
+                        Cursor="Hand" Click="ButtonBase_OnClick" Margin="10,283,0,0" RenderTransformOrigin="0.47,-0.15">
+
+                    <Button.Background>
+
+                        <LinearGradientBrush StartPoint="0.5,0" EndPoint="0.5,1">
+                            <GradientStop Color="LightCyan" />
+                            <GradientStop Color="Gainsboro" Offset="1" />
+                        </LinearGradientBrush>
+
+                    </Button.Background>
+
+                </Button>
+
+                <Button Content="پاکسازی" Width="100" Height="40" HorizontalAlignment="Left" VerticalAlignment="Bottom"
+                        Cursor="Hand" Click="clear_OnClick" Margin="115,0,0,323" RenderTransformOrigin="0.47,-0.15">
+
+                    <Button.Background>
+
+                        <LinearGradientBrush StartPoint="0.5,0" EndPoint="0.5,1">
+                            <GradientStop Color="LightSalmon" />
+                            <GradientStop Color="Gainsboro" Offset="1" />
+                        </LinearGradientBrush>
+
+                    </Button.Background>
+
+                </Button>
+
+                <Button Content=" 2 الگوریتم حریصانه" Width="100" Height="40" HorizontalAlignment="Left" VerticalAlignment="Top"
+                        Cursor="Hand" Click="ButtonBase2_OnClick" Margin="10,345,0,0" RenderTransformOrigin="0.47,-0.15">
+
+                    <Button.Background>
+
+                        <LinearGradientBrush StartPoint="0.5,0" EndPoint="0.5,1">
+                            <GradientStop Color="Aquamarine" />
+                            <GradientStop Color="Gainsboro" Offset="1" />
+                        </LinearGradientBrush>
+
+                    </Button.Background>
+
+                </Button>
+
+                <Button Content="شهر های نمونه" Width="100" Height="40" HorizontalAlignment="Left" VerticalAlignment="Top"
+                        Cursor="Hand" Click="addCitySample_OnClick" Margin="115,345,0,0" RenderTransformOrigin="0.47,-0.15">
+
+                    <Button.Background>
+
+                        <LinearGradientBrush StartPoint="0.5,0" EndPoint="0.5,1">
+                            <GradientStop Color="LightCyan" />
+                            <GradientStop Color="Gainsboro" Offset="1" />
+                        </LinearGradientBrush>
+
+                    </Button.Background>
+
+                </Button>
 
             </Grid>
 

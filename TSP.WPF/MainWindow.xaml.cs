@@ -31,4 +31,31 @@ public partial class MainWindow : Window
     {
         throw new NotImplementedException();
     }
+
+    // الگوریتم حریصانه 1
+    private void ButtonBase_OnClick(object sender, RoutedEventArgs e)
+    {
+        throw new NotImplementedException();
+    }
+    // الگوریتم حریصانه 2
+    private void ButtonBase2_OnClick(object sender, RoutedEventArgs e)
+    {
+        throw new NotImplementedException();
+    }
+
+    private void AddCity_Click(object sender, RoutedEventArgs e)
+    {
+        throw new NotImplementedException();
+    }
+
+    private void clear_OnClick(object sender, RoutedEventArgs e)
+    {
+        throw new NotImplementedException();
+    }
+
+    private void addCitySample_OnClick(object sender, RoutedEventArgs e)
+    {
+        throw new NotImplementedException();
+    }
+
 }
