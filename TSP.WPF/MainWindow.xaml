@@ -47,7 +47,7 @@
 
                     <TextBlock Text="شهر ها را با , وارد نمایید . مثال : x,y" Margin="0,0,0,5" Background="Azure" />
 
-                    <ListBox x:Name="CityName" Height="200" Width="200" Margin="0,0,0,10">
+                    <ListBox x:Name="CityList" Height="200" Width="200" Margin="0,0,0,10">
 
                         <ListBox.Background>
                             <LinearGradientBrush StartPoint="0.5,0" EndPoint="0.5,1">
@@ -87,7 +87,7 @@
                     </StackPanel>
 
                 </StackPanel>
-
+                <Canvas x:Name="CityCanvas" Background="Transparent" Margin="250,40,-120,40" Grid.ColumnSpan="2"/>
                 <Button Content="الگوریتم حریصانه" Width="100" Height="40" HorizontalAlignment="Left" VerticalAlignment="Top"
                         Cursor="Hand" Click="ButtonBase_OnClick" Margin="10,283,0,0" RenderTransformOrigin="0.47,-0.15">
 
