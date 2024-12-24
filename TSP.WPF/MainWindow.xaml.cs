@@ -1,6 +1,8 @@
 ﻿using System.Windows;
+using System.Windows.Controls;
 using System.Windows.Input;
 using System.Windows.Media;
+using System.Windows.Shapes;
 
 namespace TSP.WPF;
 public partial class MainWindow : Window
@@ -84,7 +86,7 @@ public partial class MainWindow : Window
                 cityInput.Clear();
 
                 // نمایش شهر
-                //DrawCity(x,y);
+                DrawCity(x,y);
 
             }
             else
@@ -108,6 +110,23 @@ public partial class MainWindow : Window
     private void addCitySample_OnClick(object sender, RoutedEventArgs e)
     {
         throw new NotImplementedException();
+    }
+
+    #endregion
+
+    #region Drawing
+
+    private void DrawCity(double x,double y)
+    {
+        Ellipse cityCircle = new Ellipse();
+
+        cityCircle.Width = 10;
+        cityCircle.Height = 10;
+        cityCircle.Fill = Brushes.DarkViolet;
+
+        Canvas.SetLeft(cityCircle, x - 5);
+        Canvas.SetTop(cityCircle, y - 5);
+        CityCanvas.Children.Add(cityCircle);
     }
 
     #endregion
