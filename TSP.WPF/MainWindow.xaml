@@ -88,8 +88,9 @@
 
                 </StackPanel>
                 <Canvas x:Name="CityCanvas" Background="Transparent" Margin="250,40,-120,40" Grid.ColumnSpan="2"/>
+               
                 <Button Content="الگوریتم حریصانه" Width="100" Height="40" HorizontalAlignment="Left" VerticalAlignment="Top"
-                        Cursor="Hand" Click="ButtonBase_OnClick" Margin="10,283,0,0" RenderTransformOrigin="0.47,-0.15">
+                        Cursor="Hand" Margin="10,283,0,0" RenderTransformOrigin="0.47,-0.15" Click="Button_Click" >
 
                     <Button.Background>
 

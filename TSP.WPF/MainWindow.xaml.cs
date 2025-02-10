@@ -37,17 +37,67 @@ public partial class MainWindow : Window
 
     #endregion
 
-    #region Algo
+    #region Algorithm
+
+    private void Button_Click(object sender, RoutedEventArgs e)
+    {
+        if (cities.Count > 2)
+        {
+            MessageBox.Show("حداقل 2 شهر اضافه کنید");
+            return;
+        }
+
+        var path = SloveTSP(cities);
+
+        DrawPath(cities,path);
+        AnimationPath(cities,path);
+    }
+
+    private List<int> SloveTSP(List<Point> cities)
+    {
+        int n = cities.Count;
+        bool[] visited = new bool[n];
+        List<int> path = new List<int>();
+        int currentCity = 0;
+
+        path.Add(currentCity);
+        visited[currentCity] = true;
+
+        while (path.Count < n)
+        {
+            double mindistance = double.MaxValue;
+            int nextcity = -1;
+
+            for (int i = 0; i < n; i++)
+            {
+                if (!visited[i])
+                {
+                    double distance = GetDistance(cities[currentCity], cities[i]);
+                    if (distance < mindistance)
+                    {
+                        mindistance = distance;
+                        nextcity  =i;
+                    }
+                }
+            }
+
+        }
+
+        path.Add(0);
+        return path;
+    }
 
     // الگوریتم حریصانه 1
-    private void ButtonBase_OnClick(object sender, RoutedEventArgs e)
-    {
-        throw new NotImplementedException();
-    }
+
     // الگوریتم حریصانه 2
     private void ButtonBase2_OnClick(object sender, RoutedEventArgs e)
     {
         throw new NotImplementedException();
+    }
+
+    private double GetDistance(Point a, Point b)
+    {
+        return Math.Sqrt(Math.Pow(a.X - b.X,2) + Math.Pow(a.Y - b.Y,2));
     }
 
     #endregion
@@ -58,7 +108,7 @@ public partial class MainWindow : Window
     {
         if (e.Key == Key.Enter)
         {
-            AddCity_Click(sender,e);
+            AddCity_Click(sender, e);
         }
     }
 
@@ -81,12 +131,12 @@ public partial class MainWindow : Window
                     return;
                 }
 
-                cities.Add(new Point(x,y));
+                cities.Add(new Point(x, y));
                 CityList.Items.Add($"({x},{y})");
                 cityInput.Clear();
 
                 // نمایش شهر
-                DrawCity(x,y);
+                DrawCity(x, y);
 
             }
             else
@@ -104,14 +154,16 @@ public partial class MainWindow : Window
 
     private void clear_OnClick(object sender, RoutedEventArgs e)
     {
-        throw new NotImplementedException();
+        cities.Clear();
+        CityList.Items.Clear();
+        CityCanvas.Children.Clear();
     }
 
     #endregion
 
     #region Drawing
 
-    private void DrawCity(double x,double y)
+    private void DrawCity(double x, double y)
     {
         Ellipse cityCircle = new Ellipse();
 
@@ -130,7 +182,7 @@ public partial class MainWindow : Window
 
         foreach (var city in cities)
         {
-            DrawCity(city.X,city.Y);   
+            DrawCity(city.X, city.Y);
         }
 
         for (int i = 0; i < path.Count - 1; i++)
@@ -166,11 +218,11 @@ public partial class MainWindow : Window
 
         PathGeometry animationPath = new PathGeometry();
 
-        PathFigure figure = new PathFigure{StartPoint = this.cities[path[0]] };
+        PathFigure figure = new PathFigure { StartPoint = this.cities[path[0]] };
 
         for (int i = 1; i < path.Count; i++)
         {
-            figure.Segments.Add(new LineSegment(cities[path[i]],true));
+            figure.Segments.Add(new LineSegment(cities[path[i]], true));
         }
 
         animationPath.Figures.Add(figure);
@@ -194,8 +246,8 @@ public partial class MainWindow : Window
         animationX.Duration = duration;
         animationY.Duration = duration;
 
-        movingDot.BeginAnimation(Canvas.LeftProperty,animationX);
-        movingDot.BeginAnimation(Canvas.TopProperty,animationY);
+        movingDot.BeginAnimation(Canvas.LeftProperty, animationX);
+        movingDot.BeginAnimation(Canvas.TopProperty, animationY);
     }
 
     #endregion
@@ -219,12 +271,12 @@ public partial class MainWindow : Window
         {
             cities.Add(city);
             CityList.Items.Add($"({city.X},{city.Y})");
-            DrawCity(city.X,city.Y);
+            DrawCity(city.X, city.Y);
         }
 
         MessageBox.Show("لیست شهرهای پیشفرض اضافه گردید. 👌");
     }
 
-    #endregion
 
+    #endregion
 }
